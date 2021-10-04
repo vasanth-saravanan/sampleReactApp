@@ -6,7 +6,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {AuthContext} from './src/context/AuthContext';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import DashboardScreen from './src/screens/auth/DashboardScreen';
+import EmployeeList from './src/screens/auth/EmployeeList';
+import EmployeeDetail from './src/screens/auth/EmployeeDetails';
 import LoginScreen from './src/screens/unAuth/LoginScreen';
 import {Title, Caption} from 'react-native-paper';
 import {AppStyles} from './src/utils/AppStyles';
@@ -96,11 +97,18 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           {loginState.userToken != null ? (
-            <Stack.Screen
-              name="Dashboard"
-              options={{headerShown: false}}
-              component={DashboardScreen}
-            />
+            <>
+              <Stack.Screen
+                name="EmployeeList"
+                options={{headerShown: false}}
+                component={EmployeeList}
+              />
+              <Stack.Screen
+                name="EmployeeDetail"
+                options={{headerShown: false}}
+                component={EmployeeDetail}
+              />
+            </>
           ) : (
             <Stack.Screen
               name="Login"

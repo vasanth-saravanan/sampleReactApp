@@ -26,13 +26,6 @@ class LoginScreen extends React.Component {
     return (
       <View style={basePagestyle.baseContainer}>
         <SafeAreaView />
-        <Appbar.Header style={styles.appBar}>
-          <Appbar.Action
-            icon="arrow-left"
-            color={AppStyles.color.greyDark}
-            onPress={() => {}}
-          />
-        </Appbar.Header>
         <ScrollView>
           <View style={basePagestyle.container}>
             <View style={styles.body}>
@@ -59,19 +52,6 @@ class LoginScreen extends React.Component {
               </View>
 
               <View style={styles.footer}>
-                <Caption>
-                  <Caption style={Themes.textGreyLight}>
-                    By logging in you agree to our{' '}
-                  </Caption>
-
-                  <Caption style={styles.policyText}>
-                    Terms & Conditions
-                  </Caption>
-                  <Caption style={Themes.textGreyLight}> and </Caption>
-
-                  <Caption style={styles.policyText}>Privacy Policy</Caption>
-                </Caption>
-
                 <Button
                   mode="contained"
                   disabled={
